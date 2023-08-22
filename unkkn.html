@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMS Section</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+    body {
+    margin: 0;
+    padding: 0;
+    }
+    *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    }
+    .footer
+    {
+        background: linear-gradient(to bottom, #b4ade3, #7fb9e3);
+    }
+            .side-menu {
+            width: 250px;
+            background-color: #333;
+            color: #fff;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: -250px;
+            transition: left 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/sript2.js"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+        <a class="navbar-brand" href="about.php">
+            <img src="./include/favicon_io/favicon-16x16.png" width="30" height="30" class="d-inline-block align-top" alt="Logo">
+        </a>
+            <a class="navbar-brand" href="#">Salem Inc.</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="signup.php">Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="logon.php">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+</div> 
+
+    <!-- SMS Section -->
+    <section class="py-5" style="margin-bottom: 70px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2>Send Test SMS Messages</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet odio nec libero auctor
+                        blandit id at nulla.</p>
+                    <form>
+                        <div class="mb-3">
+                            <label for="recipient" class="form-label">Recipient Phone Number</label>
+                            <input type="text" class="form-control" id="recipient" placeholder="Enter phone number">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="4"
+                                placeholder="Type your message here"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send SMS</button>
+                    </form>
+                </div>
+                <div class="col-lg-6">
+                    <!-- SMS illustration or image -->
+                    <img src="img/reshot-illustration-social-media-contacts-57MZVACHJU-709ed.png" alt="SMS Illustration" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4 footer">
+        <div class="container text-center">
+            <p>&copy; 2023 Salem Inc. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="js/script2.js"></script>
+</body>
+</html>

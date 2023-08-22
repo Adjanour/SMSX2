@@ -1,0 +1,317 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'ubuntu',Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body{
+    min-height: 100vh;
+    min-width: 100vw;
+    
+}
+.container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* adjust the number of columns as needed */
+    justify-content: center;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+    border-radius: 20px;
+    padding: 10px;
+}
+.navigation{
+    position: fixed;
+    /* width: 300px; */
+    height: 100%;
+    transition: 0.5s;
+    overflow: hidden;
+    color: black;
+}
+.navigation.active{
+    width: 300px;
+    transition: 0.5s;
+}
+.navigation ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: black;
+}
+.navigation ul li{
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    color: black;
+}
+.navigation ul li:hover,
+.navigation ul li.hovered
+{
+    background: #8af129;
+}
+.navigation ul li:nth-child(1){
+    margin-bottom: 40px;
+    pointer-events: none;
+}
+.navigation ul li a{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+}
+.navigation ul li a:hover,
+.navigation ul li.hovered a{
+    color: #0d6efd;
+    
+}
+.navigation ul li a .icon{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+.navigation ul li a .icon i{
+    font-size: 1.75em;
+    padding-top: 15px;
+    color: black;
+}
+.navigation ul li a .title{
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    color: black;
+}
+
+.main{
+    position: absolute;
+    width: calc(100% );
+    min-height: 100vh;
+    transition: 0.5s;
+}
+
+.main.active{
+    width: calc(100% - 300px);
+    left: 300px;
+}
+
+.contact.active{
+visibility: hidden;
+}
+
+.topbar{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.toggle{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+    cursor: pointer;
+}
+
+.search{
+    position: relative;
+    width: 400px;
+    margin: 0 10px;
+}
+
+.search label{
+    position: relative;
+    width: 100%;
+}
+
+.search label input{
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    padding-left: 35px;
+    font-size: 18px;
+    outline: none;
+    background-color: white; 
+    border: none;
+}
+
+.search label input::placeholder{
+    text-align: center;
+}
+
+.search label i{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 1.2em;
+}
+
+.user{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.user img{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius:50%;
+}
+
+
+.details{
+   display: flex;
+   justify-content: center;
+   align-items: center; 
+}
+
+
+.container#blur.active{
+    filter: blur(20px);
+    pointer-events: none;
+    user-select: none;
+}
+
+
+.sub-container {
+background-color: #f8f9fa; /* Light gray background */
+border: 1px solid #ced4da; /* Gray border */
+padding: 10px;
+border-radius: 25px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);/* Add a shadow on hover */
+
+}
+.toolbar {
+/* Add border and padding to the navbar */
+border: 1px solid #ced4da; /* Gray border */
+padding: 5px;
+border-radius: 25px;
+margin-bottom: 20px; /* Create some space between the toolbar and content */
+}
+
+.sub-container:hover {
+box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+transform: scale(1.01);
+transition-delay: 0.1s;
+}
+
+.btn 
+{
+border-radius: 20px;
+margin: 5px;
+}
+.btn :hover
+{
+    transform: scale(1.1);
+}
+
+.dialog {
+display: none;
+position: fixed;
+z-index: 1000;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.4);
+border-radius: 25px;
+}
+
+.dialog-content {
+background-color: #fefefe;
+margin: 15% auto;
+padding: 20px;
+border: 1px solid #888;
+width: 80%;
+max-width: 400px;
+position: relative;
+}
+
+.close-btn {
+position: absolute;
+top: 10px;
+right: 10px;
+font-size: 24px;
+cursor: pointer;
+}
+#contactDialog
+{
+border-radius: 25px;
+}
+.date-display {
+display: flex;
+justify-content: flex-end;
+padding: 0.25rem 0.5rem;
+border-radius: 4px;
+background-color: #f8f9fa;
+}
+.date-container
+{
+   background-color: #fefefe;
+
+}
+.cardBox{
+    width: 100%;
+    padding: 20px;
+    grid-template-columns: repeat(3,1fr);
+    display: grid;
+    transition: 0.5s;
+    }
+
+.cardBox .card{
+    padding: 15px;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.5s;
+    margin: 10px;
+}
+
+.cardBox .card .numbers{
+    font-weight: 300;
+    font-size: 2em;
+}
+
+.cardBox .card .cardName{
+    font-size: 1em;
+    margin-top: 5px;
+}
+
+.cardBox .card .iconBx{
+    font-size: 2.0em;
+}
+
+.cardBox .card:hover{
+    background-color: black;
+    transition: 0.5s;
+    transform: scale(1.05);
+    }
+
+.cardBox .card:hover .numbers,
+.cardBox .card:hover .cardName,
+.cardBox .card:hover .iconBx{
+    color: #ffff;
+    transition: 0.5s;
+}
+    

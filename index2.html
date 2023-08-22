@@ -1,0 +1,267 @@
+<html>
+    <head>
+        <title>dashboard</title>
+        <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+        <link rel="stylesheet" href="css/style2.css">
+        <link rel="stylesheet" href="css/bootstrap.css">
+    </head>
+    <body>
+        <div class="" id="blur">
+            <div class="navigation">
+                <ul>
+                    <li>
+                        <a href="homepage.html">
+                            <span class="icon"><i class="fa fa-home"></i></span>
+                            <span class="title">Homepage</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#recentCustomers">
+                            <span class="icon"><i class="fa fa-user"></i></span>
+                            <span class="title">Customer</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="merge.html">
+                            <span class="icon"><i class="fa fa-tags"></i></span>
+                            <span class="title">Shop</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="icon"><i class="fa fa-heart"></i></span>
+                            <span class="title">Help</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="icon" ><i class="fa fa-gear"></i></span>
+                            <span class="title">Settings</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="icon"><i class="fa fa-lock"></i></span>
+                            <span class="title">Security and Privacy</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="landing.html">
+                            <span class="icon"><i class="fa fa-sign-out"></i></span>
+                            <span class="title">Sign out</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!--main-->
+            <div class="main">
+                <div class="topbar">
+                    <div class="toggle">
+                        <i class="fa fa-bookmark"></i>
+                    </div>
+                    <!--search-->
+                    <div class="search">
+                        <label>
+                            <input type="text" placeholder="Search here">
+                            <i class="fa fa-search"></i>
+                        </label>
+                    </div>
+                    <!--userimg-->
+                    <div class="user">
+                        <img src="img/g.jpg" alt="img" width="">
+                    </div>
+                </div>
+                <!--cards-->
+                <div class="cardBox">
+                    <div class="card">
+                        <div>
+                            <div class="numbers">1,504</div>
+                            <div class="cardName">Daily Views</div>
+                        </div>
+                        <div class="iconBx">
+                            <i class="fa fa-eye"></i>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div>
+                            <div class="numbers">80</div>
+                            <div class="cardName">Sales</div>
+                        </div>
+                        <div class="iconBx">
+                            <i class="fa fa-exchange"></i>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div>
+                            <div class="numbers">284</div>
+                            <div class="cardName">Orders</div>
+                        </div>
+                        <div class="iconBx">
+                            <i class="fa fa-tags"></i>
+                        </div>
+                    </div>
+                      <div class="card">
+                        <div>
+                            <div class="numbers">$56,842</div>
+                            <div class="cardName">Earning</div>
+                        </div>
+                        <div class="iconBx">
+                            <i class="fa fa-money"></i>
+                        </div>
+                    </div>
+                </div>
+            
+               <div class="details">
+                <!--order details list-->
+                <div class="recentOrders" >
+                    <div class="cardHeader">
+                        <h2>Recent Orders</h2>
+                        <a href="view.html" class="btn" onclick="toggle()" >View All</a>
+                    </div>
+                    <div class="d-flex flex-column">
+                        <!-- ... Rest of the sidebar code ... -->
+                                    <div class="date-display">
+                                        <span class="badge bg-primary">
+                                            <i class="far fa-calendar-alt me-1"></i>
+                                            <span id="currentDateTime"></span>
+                                        </span>
+                                    </div>
+                                     <!-- Toolbar (Navbar) -->
+                                    <nav class="navbar  navbar-expand navbar-dark bg-dark toolbar">
+                                        <div class="container-fluid">
+                                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#toolbarNav" aria-controls="toolbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                                <span class="navbar-toggler-icon"></span>
+                                            </button>
+                                            <div class="collapse navbar-collapse" id="toolbarNav">
+                                                <ul class="navbar-nav">
+                                                    <li class="nav-item">
+                                                    <a href="#phone_number" class="btn btn-primary">Enter Number</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                    <button class="btn btn-primary"  id="openDialog">Add Contact</button>
+                                            <div id="contactDialog" class="dialog">
+                                                <div class="dialog-content">
+                                                    <span class="close-btn" id="closeDialog">&times;</span>
+                                                    <?php include 'addContactForm.php'; ?>
+                                                </div>
+                                            </div>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                <button class=" btn btn-primary dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Message Template
+                                                </button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#">Item 1</a>
+                                                <a class="dropdown-item" href="#">Item 2</a>
+                                                <a class="dropdown-item" href="#">Item 3</a>
+                                            </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </nav>
+                                    
+                                    <div class="mb-3">
+                                        <form action="sms.php" method="post">
+                                            <div class="mb-3">
+                                                <!-- ... Rest of the form fields ... -->
+                                                <div class="col">
+                                                        
+                                                            <select class="form-select" name="phone_number_selected" id="SelectedNumber">
+                                                            <option value="">Select a number</option>
+                                                            <?php
+                                                            while($row = mysqli_fetch_assoc($result))
+                                                            {
+                                                                $phoneNumber = $row['ctcphonenumber'];
+                                                                $ctcId = $row['ctcId'];
+                                                            ?>
+                                                            <option value="<?php echo $phoneNumber ?>"><?php echo $phoneNumber ?></option>
+                                                                <?php
+                                                            }
+                                                            ?>
+                                                            </select><br> 
+                                                        <div class="row mb-3">
+                                                                <div class="col" style="display:flex;justify-content:flex-end;">
+                                                                    <input type="text" style="margin-right: 5px;" id="phone_number" class="form-control" name="phone_number" placeholder="Type a phone number in international format. For example: +23354159968">
+                                                                    <select class="form-select" style="width:100px;" name="" id="country_code" placeholder="Countrycode" value="Country codes">
+                                                                        <option>Code</option>
+                                                                        <option value="">+233</option>
+                                                                        <option value="">+234</option>
+                                                                        <option value="">+1</option>
+                                                                    </select>
+                                                                </div>
+                                                        </div>
+                            
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col">
+                                                        <textarea class="form-control" name="message" id="" cols="50" rows="10" placeholder="Enter your message here"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col">
+                                                        <select class="form-select" name="sender" id="">
+                                                            <option selected disabled>Select Sender</option>
+                                                            <option value="SalemInc">SalemInc</option>
+                                                            <option value="Salem Inc.">Salem Inc.</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col">
+                                                        <select class="form-select" name="api" id="">
+                                                            <option selected disabled>Select API</option>
+                                                            <option value="Hubtel">Hubtel</option>
+                                                            <option value="Mnotify">Mnotify</option>
+                                                        </select><br>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <div class="col">
+                                                        <label for="scheduledTime" id="time-label" class="form-label">Scheduled Date and Time:</label>
+                                                          <input class="form-control" type="datetime-local" id="scheduledTime" name="schedule">
+                                                        </div>
+                                                        <div class="col mt-3 d-flex justify-content-end">
+                                                                <input class="btn btn-primary me-2 btn-gradient" type="submit" value="Schedule" name="schedule">
+                                                                <input class="btn btn-primary btn-gradient" type="submit" value="Send" name="Send">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                        
+                    </div>
+                
+               </div> 
+              
+            </div>
+            
+            
+        </div>
+        
+        <script>
+            //menutoggle
+            let toggle = document.querySelector('.toggle');
+            let navigation = document.querySelector('.navigation');
+            let main = document.querySelector('.main');
+
+            toggle.onclick = function(){
+                navigation.classList.toggle('active');
+                main.classList.toggle('active');
+            }
+            //add the hovered class in selected list//
+            let list = document.querySelectorAll('.navigation li');
+            function activeLink(){
+                list.forEach((item) =>
+                item.classList.remove('hovered'));
+                this.classList.add('hovered');
+            }
+            list.forEach((item) =>
+            item.addEventListener('mouseover',activeLink));
+        </script>
+    </body>
+</html>

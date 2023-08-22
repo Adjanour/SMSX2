@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="../css/total.css">
+   <link rel="stylesheet" href="../css/bootstrap.css">
+</head>
+<body>
+    <div class="cardBox">
+        <div class="card">
+            <div>
+                <div class="numbers"></div>
+                <div class="cardName"></div>
+            </div>
+            <div class="">
+                <i class=""></i>
+            </div>
+        </div>
+        <div class="card">
+            <div>
+                <div class="numbers"></div>
+                <div class="cardName"></div>
+            </div>
+            <div class="iconBx">
+                <i class=""></i>
+            </div>
+        </div>
+        <div class="card">
+            <div>
+                <div class="numbers"></div>
+                <div class="cardName"></div>
+            </div>
+            <div class="iconBx">
+                <i class=""></i>
+            </div>
+        </div>
+        <div class="card">
+            <div>
+                <div class="numbers"></div>
+                <div class="cardName"></div>
+            </div>
+            <div class="iconBx">
+                <i class=""></i>
+            </div>
+        </div>
+</div>
+<div class="container">
+    <div class="center-container">
+        
+    <div class="container-fluid">
+        <div class="date-container">
+            <div class="date-display">
+                <span class="badge bg-primary">
+                    <i class="far fa-calendar-alt me-1"></i>
+                    <span id="currentDateTime"></span>
+                </span>
+            </div>
+        </div>
+         <!-- Toolbar (Navbar) -->
+        <nav class="navbar  navbar-expand toolbar">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#toolbarNav" aria-controls="toolbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="toolbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                        <a href="#phone_number" class="btn btn-primary">Enter Number</a>
+                        </li>
+                        <li class="nav-item">
+                        <button class="btn btn-primary"  id="openDialog">Add Contact</button>
+                <div id="contactDialog" class="dialog">
+                    <div class="dialog-content">
+                        <span class="close-btn" id="closeDialog">&times;</span>
+                        <?php include 'addContactForm.php'; ?>
+                    </div>
+                </div>
+                        </li>
+                        <li class="nav-item">
+                    <button class=" btn btn-primary dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Message Template
+                    </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Item 1</a>
+                    <a class="dropdown-item" href="#">Item 2</a>
+                    <a class="dropdown-item" href="#">Item 3</a>
+                </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="mb-3">
+            <form action="sms.php" method="post">
+                <div class="mb-3">
+                    <div class="col">
+                                <select class="form-select" name="phone_number_selected" id="SelectedNumber">
+                                <option value="">Select a number</option>
+                                <?php
+                                while($row = mysqli_fetch_assoc($result))
+                                {
+                                    $phoneNumber = $row['ctcphonenumber'];
+                                    $ctcId = $row['ctcId'];
+                                ?>
+                                <option value="<?php echo $phoneNumber ?>"><?php echo $phoneNumber ?></option>
+                                    <?php
+                                }
+                                ?>
+                                </select><br> 
+                            <div class="row mb-3">
+                                    <div class="col" style="display:flex;justify-content:flex-end;">
+                                        <input type="text" style="margin-right: 5px;" id="phone_number" class="form-control" name="phone_number" placeholder="Type a phone number in international format. For example: +23354159968">
+                                        <select class="form-select" style="width:100px;" name="" id="country_code" placeholder="Countrycode" value="Country codes">
+                                            <option>Code</option>
+                                            <option value="">+233</option>
+                                            <option value="">+234</option>
+                                            <option value="">+1</option>
+                                        </select>
+                                    </div>
+                            </div>
+
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <textarea class="form-control" name="message" id="" cols="50" rows="10" placeholder="Enter your message here"></textarea>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <select class="form-select" name="sender" id="">
+                                <option selected disabled>Select Sender</option>
+                                <option value="SalemInc">SalemInc</option>
+                                <option value="Salem Inc.">Salem Inc.</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <select class="form-select" name="api" id="">
+                                <option selected disabled>Select API</option>
+                                <option value="Hubtel">Hubtel</option>
+                                <option value="Mnotify">Mnotify</option>
+                            </select><br>
+                        </div>
+                        <div class="mb-3">
+                            <div class="col">
+                            <label for="scheduledTime" id="time-label" class="form-label">Scheduled Date and Time:</label>
+                              <input class="form-control" type="datetime-local" id="scheduledTime" name="schedule">
+                            </div>
+                            <div class="col mt-3 d-flex justify-content-end">
+                                    <input class="btn btn-primary me-2 btn-gradient" type="submit" value="Schedule" name="schedule">
+                                    <input class="btn btn-primary btn-gradient" type="submit" value="Send" name="Send">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

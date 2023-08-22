@@ -1,0 +1,47 @@
+ /* Additional custom styling */
+ body {
+    background-color: rgb(240, 240, 240);
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('../img/reshot-illustration-digital-desktop-conversation-E2MJWBP7VT.png'); /* Replace with your background image URL */
+    background-size:900px;
+    background-repeat: no-repeat;
+    background-position:top-left;
+  }
+  .overlay {
+    position: relative;
+    z-index: 1;
+    background-color: rgba(231, 228, 228, 0.5);
+    padding: 10px;
+  }
+  .navbar {
+    background-color: #8af129;
+  }
+  .cta-button {
+    background-color:#8af129;
+    color: black;
+  }
+  .flex-container {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+  }
+  .feature {
+    flex: 0 0 calc(50% - 20px);
+    margin: 10px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    background-color: #8af129;
+    transition: transform 0.5s; /* Add transition for the flip effect */
+  }
+  .feature:hover {
+      transform: scale(1.1);
+      background-color: black;
+      color: #ffffff;
+  }
+  .feature img
+  {
+    width: 50px;
+  
+  }

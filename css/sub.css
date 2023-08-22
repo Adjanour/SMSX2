@@ -1,0 +1,170 @@
+*{
+	font-family: sans-serif;
+}
+:root{
+    --blue: #2947F2;
+    --white: #99E9F2;
+    --grey: #f5f5f5;
+    --black1: #260101;
+    --black2: #4973F2;
+}
+body{
+	margin: 0;
+	padding: 0;
+}
+.page{
+	background: radial-gradient(rgba(0, 157, 255, 0),rgba(0, 0, 0, 0.678)), url(../img/sub.jpg) fixed;
+	background-size: cover;
+	display: flex;
+	flex-wrap: wrap;
+}
+.col{
+	flex: 1;
+	height: 100vh;
+	position: relative;
+}
+
+.time{
+	color: #fff;
+	text-transform: uppercase;
+	width: 90%;
+	display: flex;
+	justify-content: center;
+}
+.middle{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	text-align: center;
+}
+.time span{
+	padding: 0 14px;
+	font-size: 2em;
+}
+.time span div{
+	font-size: 40px;
+}
+.newsletter{
+	width: 90%;
+}
+.newsletter h4{	
+	font-size: 12px;
+	color: #fff;
+}
+.newsletter h2{
+	font-size: 2em;
+	color: #fff;
+}
+.newsletter input{
+	display: block;
+	margin: 12px auto;
+	width: 100%;
+	max-width: 400px;
+	box-sizing: border-box;
+	padding: 14px 20px;
+	border-radius: 30px;
+	border: 1px solid #ddd;
+	outline: none;
+	background: transparent;
+	color: #fff;
+	font-size: 1.43em;
+
+}
+input::placeholder{
+	color: #fff;
+	font-size: 0.7em;
+}
+.newsletter-btn{
+	background: transparent;
+	color: #fff;
+	cursor: pointer;
+	transition: 0.4s;
+	display: block;
+	margin: 12px auto;
+	width: 100%;
+	max-width: 400px;
+	box-sizing: border-box;
+	padding: 14px 20px;
+	border-radius: 30px;
+	border: 1px solid rgb(255, 255, 255);
+	outline: none;
+}
+.newsletter-btn:hover{
+	opacity: .7;
+}
+a{
+	text-decoration: none;
+	color: #fff;
+}
+
+.page#blur.active{
+    filter: blur(20px);
+    pointer-events: none;
+    user-select: none;
+}
+
+#popup{
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    padding:50px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.30);
+    background: rgba(255, 255, 255, 0.266);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+#popup.active{
+    top: 50%;
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+}
+#popup a{
+	color: rgb(0, 157, 255);
+	margin-right: 10px;
+	transition: 0.3s ease-in-out;
+	font-weight: 600;
+
+}
+
+#popup a:hover{
+	color: rgb(34, 0, 255);
+	transition: 0.3s ease-in-out;
+	
+}
+#popup button{
+	background: rgb(0, 157, 255);
+	color: #fff;
+	border: none;
+	width: 100px;
+	height: 30px;
+	font-weight: 600;
+	font-size: 1em;
+	transition: 0.3s ease-in-out;
+	border-radius: 7px;
+}
+#popup button:hover {
+	background: rgb(17, 0, 255);
+	color: rgb(255, 255, 255);
+	transition: 0.3s ease-in-out;
+	border-radius: 0;
+}
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 900px){
+	.col{
+		flex: 100%;
+	}
+}
+

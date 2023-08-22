@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Your SMS App</title>
+    <!-- Include Bootstrap CSS and other stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/total2.css">
+    <script src="js/main.js"></script>
+    <style>
+        /* Add this to your custom.css file */
+.tooltip {
+    position: relative;
+    cursor: pointer;
+}
+
+.tooltip .tooltip-text {
+    display: none;
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 4px;
+    white-space: nowrap;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltip-text {
+    display: block;
+}
+
+    </style>
+</head>
+<body>         
+    <div class="navigation">
+            <ul>
+                <li>
+                    <br>
+                    <a class="" href="about.php">
+                        <img src="./include/favicon_io/favicon.ico" width="50" height="50" class="d-inline-block align-top" alt="Logo">
+                        <h1 class="title" style="margin-top: 5px; font-size: large;"> Salem Server</h1>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html">
+                        <span class="icon"><i class="fa fa-home"></i></span>
+                        <span class="title">Homepage</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="contacts.php">
+                        <span class="icon"><i class="fa fa-user"></i></span>
+                        <span class="title">Contacts</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="logon.php">
+                        <span class="icon"><i class="fa fa-tags"></i></span>
+                        <span class="title">Login</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="signup.php">
+                        <span class="icon"><i class="fa fa-heart"></i></span>
+                        <span class="title">Signup</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="account.php">
+                        <span class="icon"><i class="fa fa-lock"></i></span>
+                        <span class="title">Security and Account</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="logout.php">
+                        <span class="icon"><i class="fa fa-sign-out"></i></span>
+                        <span class="title">Log out</span>
+                    </a>
+                </li>
+            </ul>
+    </div>
+    <!-- Main content -->
+    <div class="main">
+        <!-- Step-by-Step Guide Modal for Compose Button -->
+            <div class="modal fade" id="guide-modal" tabindex="-1" aria-labelledby="guide-modal-label" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="guide-modal-label">Step-by-Step Guide: Compose a Message</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                                    <div class="modal-body">
+                                        <!-- Step-by-Step Guide Content for Compose Button -->
+                                        <!-- Use the sample guide content I provided earlier for this section -->
+                                        Step 1: Compose a New Message
+                        1. Click the "Compose" button in the top bar to start a new message.
+                        2. In the recipient field, start typing the name or phone number of the contact you want to message. You can also select a contact from the dropdown suggestions.
+                        3. Type your message in the message box below the recipient field.
+                        4. If desired, you can attach media by clicking the attachment icon and selecting an image, video, or document from your device.
+                        5. Click the "Send" button to deliver your message.
+
+                        Step 2: Group Messaging
+                        1. To send a message to multiple contacts, enter multiple names or phone numbers in the recipient field, separated by commas.
+                        2. Your message will be sent individually to each recipient, creating a group conversation.
+
+                        Step 3: Emoji and Emoticons
+                        1. Express yourself with emojis and emoticons. Click the smiley face icon to access the emoji picker and choose from a wide range of expressive icons.
+
+                        Step 4: Formatting Text
+                        1. You can format your text using basic styling options. Highlight the text you want to format and use the formatting icons to make it bold, italic, or underline.
+
+                        Step 5: Scheduled Messages
+                        1. To schedule a message for later delivery, click the calendar icon before sending. Choose a date and time, and your message will be sent automatically at the scheduled time.
+
+                                    </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <div class="topbar">
+            <div class="toggle">
+                <i class="fa fa-bookmark"></i>
+            </div>
+            <!--search-->
+            <div class="search">
+                <label>
+                    <input type="text" placeholder="Search here">
+                    <i class="fa fa-search"></i>
+                </label>
+            </div>
+            <div class="date-display">
+                <span class="badge bg-primary">
+                    <i class="far fa-calendar-alt me-1"></i>
+                    <span id="currentDateTime"></span>
+                </span>
+            </div>
+            <div>
+                <h4>Welcome <?php echo $Fullname ?></h4>
+            </div>
+            <!--userimg-->
+            <div class="user">
+                <a href="account.php"><img src="img/Image (2).jpg" alt="img" width=""></a>
+            </div>
+        </div>
+    <!-- Welcome and CTA -->
+            <div class="container">
+                <h2 class="welcome-heading">Welcome to Your SMS App!</h2>
+                <p class="welcome-text">
+                    Revolutionize the way you communicate with our cutting-edge SMS app. As a developer and technology enthusiast, you're about to embark on a journey of seamless messaging, innovative features, and a user-friendly experience.
+                </p>
+                <div class="cta-buttons">
+                    <button id="start-tutorial" class="btn btn-primary">Start Tutorial</button>
+                    <a href="signup.php" class="btn btn-secondary">Get Started</a>
+                </div>
+                <button id="guide-compose" class="btn btn-info">Guide: Compose</button>
+
+            </div>
+
+    <!-- Button to trigger the tutorial modal -->
+        <button id="start-tutorial" class="btn btn-primary">Start Tutorial</button>
+
+        <!-- Tutorial Modal -->
+        <div class="modal fade" id="tutorial-modal" tabindex="-1" aria-labelledby="tutorial-modal-label" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="tutorial-modal-label">Welcome to Your SMS App Tutorial</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Add your tutorial content here -->
+                        Welcome to Your SMS App Tutorial
+
+                                Slide 1: Introduction
+                                Welcome to your SMS app! In this interactive tutorial, we'll guide you through the essential features and functionalities of the app. Let's get started!
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Skip Tutorial</button>
+                        <button id="next-slide" type="button" class="btn btn-primary">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+
+    <script>
+        // JavaScript to show the guide modal for Compose button
+        document.getElementById('guide-compose').addEventListener('click', () => {
+            $('#guide-modal').modal('show');
+        });
+    </script>
+    
+    <script>
+        // JavaScript for the tutorial modal
+        document.getElementById('start-tutorial').addEventListener('click', () => {
+            $('#tutorial-modal').modal('show');
+        });
+    
+        const slides = document.querySelectorAll('.modal-body .slide');
+        let currentSlide = 0;
+    
+        document.getElementById('next-slide').addEventListener('click', () => {
+            slides[currentSlide].classList.remove('active');
+            currentSlide++;
+            if (currentSlide < slides.length) {
+                slides[currentSlide].classList.add('active');
+            } else {
+                $('#tutorial-modal').modal('hide');
+                // You can add code to mark the tutorial as completed here
+            }
+        });
+    </script>
+    
+    <script src="js/number.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/getdate.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/main2.js"></script>
+</body>
+</html>

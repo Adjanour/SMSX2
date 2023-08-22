@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSV files</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-md-6 offset-md-3">
+                <form action="uploadfile.php" method="post" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="file" class="form-label">Choose a CSV File</label>
+                        <input type="file" class="form-control" name="File" id="file" onchange="previewImage(event)">
+                    </div>
+                    <div class="mb-3">
+                        <img id="preview" src="#" alt="Preview" class="img-fluid" style="display: none; max-width: 300px; max-height: 300px;">
+                    </div>
+                    <button type="submit" class="btn btn-primary" name="Upload">Upload</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        function previewImage(event) {
+            var fileInput = event.target;
+            var preview = document.getElementById('preview');
+            
+            if (fileInput.files && fileInput.files[0]) {
+                var reader = new FileReader();
+                
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                    preview.style.display = 'block';
+                };
+                
+                reader.readAsDataURL(fileInput.files[0]);
+            }
+        }
+        </script>
+        
+</body>
+</html>

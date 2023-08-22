@@ -1,0 +1,321 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'ubuntu',Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body{
+    min-height: 100vh;
+    
+}
+.container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* adjust the number of columns as needed */
+    grid-gap: 50px; /* adjust the gap between grid items */
+}
+.navigation{
+    position: fixed;
+    /* width: 300px; */
+    height: 100%;
+    transition: 0.5s;
+    overflow: hidden;
+}
+.navigation.active{
+    width: 300px;
+    transition: 0.5s;
+}
+.navigation ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.navigation ul li{
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+.navigation ul li:hover,
+.navigation ul li.hovered
+{
+    background: var(--white);
+}
+.navigation ul li:nth-child(1){
+    margin-bottom: 40px;
+    pointer-events: none;
+}
+.navigation ul li a{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: var(--white);
+}
+.navigation ul li a:hover,
+.navigation ul li.hovered a{
+    color: #0d6efd;
+    
+}
+.navigation ul li a .icon{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+.navigation ul li a .icon i{
+    font-size: 1.75em;
+    padding-top: 15px;
+}
+.navigation ul li a .title{
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+}
+
+.main{
+    position: absolute;
+    width: calc(100% );
+    min-height: 100vh;
+    transition: 0.5s;
+}
+
+.main.active{
+    width: calc(100% - 300px);
+    left: 300px;
+}
+
+.contact.active{
+visibility: hidden;
+}
+
+.topbar{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.toggle{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+    cursor: pointer;
+    color: var(--blue);
+}
+
+.search{
+    position: relative;
+    width: 400px;
+    margin: 0 10px;
+}
+
+.search label{
+    position: relative;
+    width: 100%;
+}
+
+.search label input{
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    padding-left: 35px;
+    font-size: 18px;
+    outline: none;
+    background: var(--blue);
+    border: none;
+}
+
+.search label input::placeholder{
+    text-align: center;
+}
+
+.search label i{
+    position: absolute;
+    top: 0;
+    left: 10px;
+    font-size: 1.2em;
+}
+
+.user{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.user img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.details{
+   display: flex;
+   justify-content: center;
+   align-items: center; 
+}
+
+
+.container#blur.active{
+    filter: blur(20px);
+    pointer-events: none;
+    user-select: none;
+}
+
+
+.sub-container {
+background-color: #f8f9fa; /* Light gray background */
+border: 1px solid #ced4da; /* Gray border */
+padding: 10px;
+border-radius: 25px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);/* Add a shadow on hover */
+
+}
+.toolbar {
+/* Add border and padding to the navbar */
+border: 1px solid #ced4da; /* Gray border */
+padding: 5px;
+border-radius: 25px;
+margin-bottom: 20px; /* Create some space between the toolbar and content */
+}
+
+.sub-container:hover {
+box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+transform: scale(1.01);
+transition-delay: 0.1s;
+}
+.btn-gradient {
+background: linear-gradient(to right, #FF0000, #DE0000);
+border: none;
+color: white; 
+transition: background 0.3s;
+border-radius: 20px;
+}
+.btn 
+{
+border-radius: 20px;
+margin: 5px;
+}
+
+.btn-gradient:hover {
+background: linear-gradient(to right, #008000, #00FF00);
+}
+.dialog {
+display: none;
+position: fixed;
+z-index: 1000;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.4);
+border-radius: 25px;
+}
+
+.dialog-content {
+background-color: #fefefe;
+margin: 15% auto;
+padding: 20px;
+border: 1px solid #888;
+width: 80%;
+max-width: 400px;
+position: relative;
+}
+
+.close-btn {
+position: absolute;
+top: 10px;
+right: 10px;
+font-size: 24px;
+cursor: pointer;
+}
+#contactDialog
+{
+border-radius: 25px;
+}
+.date-display {
+display: flex;
+justify-content: flex-end;
+padding: 0.25rem 0.5rem;
+border-radius: 4px;
+background-color: #f8f9fa;
+color: #0d6efd;
+}
+.date-container
+{
+   background-color: #fefefe;
+
+}
+.cardBox{
+    width: 80%;
+    padding: 20px;
+    grid-template-columns: repeat(3,1fr);
+    display: grid;
+    transition: 0.5s;
+    margin-left: 155px;
+    
+    }
+
+.cardBox .card{
+    position: relative;
+    padding: 30px;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: 0.5s;
+    margin: 10px;
+}
+
+.cardBox .card .numbers{
+    position: relative;
+    font-weight: 500;
+    font-size: 2.5em;
+}
+
+.cardBox .card .cardName{
+    font-size: 1.1em;
+    margin-top: 5px;
+}
+
+.cardBox .card .iconBx{
+    font-size: 3.5em;
+}
+
+.cardBox .card:hover{
+    color: #a4e8a4;
+    transition: 0.5s;
+    }
+
+.cardBox .card:hover .numbers,
+.cardBox .card:hover .cardName,
+.cardBox .card:hover .iconBx{
+    color: #00FF00;
+    transition: 0.5s;
+}
+    

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Number Input</title>
+    <style>
+        .input-container {
+    position: relative;
+    display: inline-block;
+}
+
+.input-box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+    max-width: fit-content;
+    width: fit-content;
+}
+
+.input-box.focus {
+    border-color: blue;
+}
+
+.phone-number-tab {
+    background-color: #2a20dc;
+    border: 1px solid blue;
+    color: white;
+    border-radius: 5px;
+    padding: 2px 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.phone-number-tab .phone-number {
+    margin-right: 5px;
+}
+
+.remove-tab-button {
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+    </style>
+</head>
+<body>
+    <div class="input-container">
+        <div class="input-box">
+            <div class="phone-number-tabs" id="phoneNumberTabs"></div>
+            <input style="border: none;" type="text" id="phoneNumberInput" placeholder="">
+        </div>
+    </div>
+    <script>
+        const phoneNumberInput = document.getElementById("phoneNumberInput");
+const phoneNumberTabs = document.getElementById("phoneNumberTabs");
+const inputBox = document.querySelector(".input-box");
+
+phoneNumberInput.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+
+        const phoneNumber = phoneNumberInput.value.trim();
+        if (phoneNumber) {
+            createPhoneNumberTab(phoneNumber);
+            phoneNumberInput.value = "";
+        }
+    }
+});
+
+inputBox.addEventListener("click", () => {
+    phoneNumberInput.focus();
+});
+
+inputBox.addEventListener("focusin", () => {
+    inputBox.classList.add("focus");
+});
+
+inputBox.addEventListener("focusout", () => {
+    inputBox.classList.remove("focus");
+});
+
+function createPhoneNumberTab(phoneNumber) {
+    const tab = document.createElement("div");
+    tab.classList.add("phone-number-tab");
+
+    const phoneNumberElement = document.createElement("span");
+    phoneNumberElement.classList.add("phone-number");
+    phoneNumberElement.textContent = phoneNumber;
+    tab.appendChild(phoneNumberElement);
+
+    const removeButton = document.createElement("span");
+    removeButton.classList.add("remove-tab-button");
+    removeButton.textContent = "X";
+    removeButton.addEventListener("click", function() {
+        phoneNumberTabs.removeChild(tab);
+    });
+    tab.appendChild(removeButton);
+
+    phoneNumberTabs.appendChild(tab);
+}
+inputBox.addEventListener("click", () => {
+            if (!phoneNumberInput) {
+                phoneNumberInput = createPhoneNumberInput();
+                phoneNumberInput.focus();
+            }
+        });
+
+        document.addEventListener("click", function(event) {
+            if (!inputBox.contains(event.target)) {
+                removePhoneNumberInput();
+            }
+        });
+
+        function createPhoneNumberInput() {
+            const input = document.createElement("input");
+            input.style.border = "none";
+            input.type = "text";
+            input.placeholder = "";
+            inputBox.appendChild(input);
+            return input;
+        }
+
+        function removePhoneNumberInput() {
+            if (phoneNumberInput) {
+                inputBox.removeChild(phoneNumberInput);
+                phoneNumberInput = null;
+            }
+        }
+    </script>
+</body>
+</html>

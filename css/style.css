@@ -1,0 +1,160 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.navbar
+{
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+}
+.nav-ul
+{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navbar a
+{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 5px;
+    transition: .3s;
+}
+.nav-button
+{
+    background-color: rgb(50, 153, 182);
+    color:black;
+    border: 0px solid;
+    padding: 5px 20px 5px 20px;
+    margin: 5px;
+    border-radius: 20px;
+    transition: .3s;
+    cursor: pointer;
+}
+.nav-button:hover
+{
+    background-color: rgb(0, 0, 255);
+    color: white;
+    transform: scale(1.2);
+}
+.container
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: fit-content;
+    background-image: linear-gradient(to right, #32be8f, #38d39f, #32be8f);
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    padding: 10px;
+}
+.tab-container
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.tab
+{
+    background-color:rgb(50, 153, 182);
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    width: auto;
+    cursor: pointer;
+    border: 0px solid;
+    transition: .3s;
+   
+}
+.first-div
+{
+    display: block;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.second-div
+{
+    display: block;
+    margin: auto;
+    align-content: center;
+}
+.third-div
+{
+    
+    align-items: center;
+    margin-bottom: 20px;
+}
+.fourth-div
+{
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.button
+{
+    background-color: black;
+    color: #ffffff;
+    padding:10px 20px 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: .3s;
+    margin:10px;
+    border: 0px solid;
+}
+.button:hover
+{
+    background-color: rgb(0, 0, 255);
+    color: white;
+    transform: scale(1.2);
+}
+.second-div textarea
+{
+    border-radius: 10px;
+    border: 0px solid;
+    padding: 20px 20px;
+    margin: 10px;
+    align-self: center;
+}
+.first-div input
+{
+    border-radius: 10px;
+    border: 0px solid;
+    padding: 10px 20px;
+    margin-top: -50px;
+    width: 100%;
+}
+.first-div #side{
+    display: flex;
+    justify-content:flex-end;
+}
+.third-div select
+{
+    border-radius: 20px;
+    border: 0px solid;
+    padding: 10px 20px;
+    margin: 10px;
+    width: 25%;
+}
+.second-div h2
+{
+    text-align: center;
+}

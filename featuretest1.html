@@ -1,0 +1,301 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/total.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+        /* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+    </style>
+</head>
+<body>
+    <div class="tab">
+        <button class="tablinks" onclick="openCity(event, 'London')">London</button>
+        <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
+        <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+      </div>
+      
+      <!-- Tab content -->
+      <div id="London" class="tabcontent">
+        <div class="container">
+            <div class="">
+                <!-- Toolbar (Navbar) -->
+                <nav class=" toolbar " style="width: fit-content; margin-left:auto; margin-right:auto; background-color:#8af129;">
+                            <div class="collapse navbar-collapse" id="toolbarNav" style="display: flex; justify-content: center; align-items: center;">
+                                <ul class="navbar-nav" style="display:grid; grid-template-columns: repeat(4,1fr);">
+                                    <li class="nav-item">
+                                        <a href="#phone_number" class="btn btn-primary" style="background-color: black; border-color:black">Enter Number</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#SelectedNumber" class="btn btn-primary"style="background-color: black; border-color:black">Select Number</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button class="btn btn-primary" style="background-color: black; border-color:black" id="openDialog">Add Contact</button>
+                                        <div id="contactDialog" class="dialog">
+                                            <div class="dialog-content">
+                                                <span class="close-btn" id="closeDialog">&times;</span>
+                                                <?php include 'addContactForm.php'; ?>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                            <button class=" btn btn-primary " style="background-color: black; border-color:black"  type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Message Template
+                                            </button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="#">Item 1</a>
+                                            <a class="dropdown-item" href="#">Item 2</a>
+                                            <a class="dropdown-item" href="#">Item 3</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                </nav>
+                <div class="mb-3">
+                    <form action="sms.php" method="post">
+                        <div class="mb-3">
+                                <div class="col">
+                                            <select class="form-select" name="phone_number_selected" id="SelectedNumber">
+                                            <option value="">Select a number</option>
+                                            <?php
+                                            while($row = mysqli_fetch_assoc($result))
+                                            {
+                                                $phoneNumber = $row['ctcphonenumber'];
+                                                $ctcId = $row['ctcId'];
+                                            ?>
+                                            <option value="<?php echo $phoneNumber ?>"><?php echo $phoneNumber ?></option>
+                                                <?php
+                                            }
+                                            ?>
+                                            </select><br> 
+                                        <div class="row mb-3">
+                                                <div class="col" style="display:flex;justify-content:flex-end;">
+                                                    <input type="text" style="margin-right: 5px;" id="phone_number" class="form-control" name="phone_number" placeholder="Type a phone number in international format. For example: +23354159968">
+                                                    <select class="form-select" style="width:100px;" name="" id="country_code" placeholder="Countrycode" value="Country codes">
+                                                        <option>Code</option>
+                                                        <option value="+233">+233</option>
+                                                        <option value="+234">+234</option>
+                                                        <option value="+1">+1</option>
+                                                    </select>
+                                                </div>
+                                        </div>
+
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col">
+                                        <textarea class="form-control" name="message" id="" cols="50" rows="10" placeholder="Enter your message here"></textarea>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="mb-3">
+                                        <div class="col mt-3 d-flex justify-content-end">
+                                                <input class="btn btnhov" style="transform:scale(1.1); background-color:#8af129;" type="submit" value="Send" name="Send">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </form>    
+                </div>
+            
+                    
+        </div>
+      </div>
+      
+      <div id="Paris" class="tabcontent">
+        <div class="container">
+            <div class="">
+                <div class="container mt-5">
+                    <h2>Accounts Management</h2>
+                    <div class="row">
+                      <!-- User Profile Information -->
+                      <div class="col-md-6">
+                        <div class="card mb-4">
+                          <div class="card-header">User Profile</div>
+                          <div class="card-body">
+                            <form action="updatecontact.php?ID=<?php echo $UserId ?>" method="post">
+                                <div class="form-group">
+                                    <label for="Username">User Name</label>
+                                    <input type="text" class="form-control" id="Username" name="username" value="<?php echo $Username ?>">
+                                  </div>
+                              <div class="form-group">
+                                <label for="fullName">Full Name</label>
+                                <input type="text" class="form-control" id="fullName"  name="fullname" value="<?php echo $Fullname ?>">
+                              </div>
+                              <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" class="form-control" name="emailaddress" id="email" value="<?php echo $Emailaddress ?>">
+                              </div>
+                              <div class="form-group">
+                                <label for="phoneNumber">Phone Number</label>
+                                <input type="text" class="form-control" name="phonenumber" id="phoneNumber" value="<?php echo $Phonenumber ?>">
+                              </div>
+                              <button type="submit" name="submit" class="btn btn-primary">Save Changes</button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                            <div class="card mb-4">
+                            <div class="card-header">Password Management</div>
+                                <div class="card-body">
+                                    <form action="changepassword.php?ID=<?php echo $UserId?>" method="post">
+                                        <div class="form-group">
+                                            <label for="newPassword">New Password</label>
+                                            <input type="password" name="password" class="form-control" id="newPassword" title="Password must be at least 8 characters long and contain at least one letter and one number" required>
+                                            <small class="form-text text-muted">Password must be at least 8 characters long and contain at least one letter and one number.</small>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="confirmPassword">Confirm New Password</label>
+                                            <input type="password" class="form-control" id="confirmPassword" required>
+                                        </div>
+                                        <!-- Security questions for account recovery -->
+                                        <div class="form-group">
+                                            <label for="securityQuestion">Security Question</label>
+                                            <select class="form-control" id="securityQuestion" name="securithyQuestion">
+                                            <option value="1">What is your mother's maiden name?</option>
+                                            <option value="2">What is your favorite childhood pet's name?</option>
+                                            <option value="3">In which city were you born?</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="securityAnswer">Answer</label>
+                                            <input type="text" class="form-control" id="securityAnswer" name="securityAnswer" required>
+                                        </div>
+                                        <button type="submit" name="changePassword" class="btn btn-primary">Change Password</button>
+                                    </form>
+                                </div>
+                            </div>
+                       </div>
+                    </div>
+                                            
+                    <!-- Notification Preferences -->
+                    <div class="card">
+                            <div class="card-header">Notification Preferences</div>
+                                <div class="card-body">
+                                    <form>
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="emailNotifications" checked>
+                                            <label class="form-check-label" for="emailNotifications">Receive Email Notifications</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="smsNotifications">
+                                            <label class="form-check-label" for="smsNotifications">Receive SMS Notifications</label>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Save Preferences</button>
+                                    </form>
+                                </div>
+                            </div>
+                    </div>        
+                </div>
+            </div>
+        </div>
+      </div>
+      
+      <div id="Tokyo" class="tabcontent">
+        <div class="container">
+            <div class="">
+                <div class="card">
+                        <div class="cardName">
+                            <div class="card-body">
+                                <table class="table  table-bordered">
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Contact</th>
+                                        <th>EmailAddress</th>
+                                        <td>Action</td>
+                                        
+                                    </tr>
+                                    <?php
+                                     
+                                        while ($row2 = mysqli_fetch_assoc($result))
+                                        {   
+                                            $ContactId = $row2['ctcId'];
+                                            $PhoneNumber = $row2['ctcphonenumber'];
+                                            $Name = $row2['ctcname'];
+                                            $EmailAddress = $row2['ctcemailaddress'];
+                                            ?>
+                                            <tr>
+                                                <td><?php echo $Name ?></td>
+                                                <td><?php echo $PhoneNumber ?></td>
+                                                <td><?php echo $EmailAddress ?></td>
+                                                <td><a class="btn btn-primary" href="editcontact.php?ID=<?php echo $ContactId ?>">Edit </a>  ||  <a class="btn btn-danger" href="deletecontact.php?Del=<?php echo $ContactId?>">Delete</a></td>
+
+                                            </tr>
+                                            
+                                            <?php
+                                        }
+                                    ?>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+        </div>
+        </div>  
+    </div>
+      </div>
+      <script>
+        function openCity(evt, cityName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+      </script>
+</body>
+</html><!-- Tab links -->
