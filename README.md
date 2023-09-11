@@ -59,6 +59,6 @@ We welcome contributions from everyone! Here's how you can get involved:
 
 Be sure to follow our Code of Conduct.
 
-![Alt text](/images/homepage.jpg)
+<img src="/images/Screenshot 2023-08-14 142630.png"" alt="Alt text">
 
 
