@@ -31,8 +31,8 @@ if (isset($_GET['searchbutton'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="../../../Users/Kirk/PhpstormProjects/API_INTERACTION/css/bootstrap.css">
+    <link rel="stylesheet" href="../../../Users/Kirk/PhpstormProjects/API_INTERACTION/css/font-awesome.css">
 </head>
 <body>
 <div class="container mt-5">

@@ -17,10 +17,10 @@ if (isset($_POST['Upload']))
     $FileError = $_FILES['File']['error'];
 
 
-    if (file_exists($targetFile)) {
-        echo '<script>alert("File already exists!");</script>';
-        $uploadOk = 0;
-    }
+    // if (file_exists($targetFile)) {
+    //     echo '<script>alert("File already exists!");</script>';
+    //     $uploadOk = 0;
+    // }
 
     if ($FileSize > 500000) {
         echo '<script>alert("File is too large");';
@@ -45,7 +45,9 @@ if (isset($_POST['Upload']))
             $arrayDetails1 = retrieveDetails($array,0);
             $arrayDetails2 = retrieveDetails($array,1);
             $arrayAsString = implode(",",$arrayDetails2);
+            $arrayAsString2 = implode(",",$arrayDetails1);
             $_SESSION['data'] = $arrayAsString;
+            $_SESSION['data2'] = $arrayAsString2;
             echo '<script>alert("The file  has been uploaded successfully.");';
             echo 'window.location.href = "bulksmspage.php";</script>';
         } else {

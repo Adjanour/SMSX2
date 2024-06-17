@@ -15,7 +15,7 @@ $result = mysqli_query($ConnStrx,$query);
 $query3 = "SELECT * FROM message_templates";
 $resulttemplate = mysqli_query($ConnStrx,$query3);
 
-$joinquerry = "SELECT usrId, username, COUNT(*) AS messages FROM messages JOIN users ON messages.usrIdfk = users.usrID where users.usrID = ?" ;
+$joinquerry = "SELECT usrId, username, COUNT(*) AS messages FROM messages JOIN users ON messages.usrIdfk = users.usrID where users.usrID = ? group by usrId" ;
 $stmt = mysqli_prepare($ConnStrx, $joinquerry);
 mysqli_stmt_bind_param($stmt, "i", $UserId);
 mysqli_stmt_execute($stmt);
@@ -29,7 +29,7 @@ mysqli_stmt_close($stmt);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SMS Form</title>
+    <title>SMS </title>
     <!-- Include Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900" rel="stylesheet">
@@ -37,6 +37,8 @@ mysqli_stmt_close($stmt);
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/total2.css">
     <script src="js/main.js"></script>
+    <link rel="manifest" href="/manifest.json">
+
 </head>
 <body>         
     <div class="navigation">
@@ -192,7 +194,7 @@ mysqli_stmt_close($stmt);
                                             while($row = mysqli_fetch_assoc($result))
                                             {
                                                 $phoneNumber = $row['ctcphonenumber'];
-                                                $Name = $row['ctcname'];
+                                                $Name = $row['ctcName'];
                                                 $ctcId = $row['ctcId'];
                                             
                                             ?>
@@ -234,7 +236,6 @@ mysqli_stmt_close($stmt);
                     
         </div>
     </div>
-</div>
 
     <footer>
         <!-- Add footer content here -->

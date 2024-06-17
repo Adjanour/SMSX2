@@ -39,9 +39,9 @@ while ($template = mysqli_fetch_assoc($resultTemplates)) {
     <title>User and Template Management</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/total2.css">
+    <link rel="stylesheet" type="text/css" href="../../../Users/Kirk/PhpstormProjects/API_INTERACTION/css/font-awesome.css">
+    <link rel="stylesheet" href="../../../Users/Kirk/PhpstormProjects/API_INTERACTION/css/bootstrap.css">
+    <link rel="stylesheet" href="../../../Users/Kirk/PhpstormProjects/API_INTERACTION/css/total2.css">
 </head>
 <body>        
     <div class="navigation">

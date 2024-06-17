@@ -3,15 +3,18 @@ require_once("include/dbconn.php");
 session_start();
 $UserId =  $_SESSION['user_id']; 
 $Fullname = $_SESSION['fullname'];
-$_SESSION['data'];
 
-if($_SESSION['data'] != NULL)
+@$_SESSION['data'] == NULL ?    $_SESSION['data']='': $_SESSION['data'];
+@$_SESSION['data2'] == NULL ? $_SESSION['data2']='':$_SESSION['data2'];
+if($_SESSION['data'] != NULL & $_SESSION['data2'] != NULL)
 {
     $data = $_SESSION['data'];
+    $data2 = $_SESSION['data2'];
 }
 else
 {
     $data = NULL;
+    $data2 = NULL;
 }
 date_default_timezone_set('Africa/Accra');
 $currentTime = time();
@@ -20,7 +23,7 @@ $messageDate = date('Y-m-d H:i:s', $currentTime);
 $query = "SELECT * FROM contacts";
 $result = mysqli_query($ConnStrx,$query);
 
-$joinquerry = "SELECT usrId, username, COUNT(*) AS messages FROM messages JOIN users ON messages.usrIdfk = users.usrID where users.usrID = ?" ;
+$joinquerry = "SELECT usrId, username, COUNT(*) AS messages FROM messages JOIN users ON messages.usrIdfk = users.usrID where users.usrID = ? GROUP BY usrId" ;
 $stmt = mysqli_prepare($ConnStrx, $joinquerry);
 mysqli_stmt_bind_param($stmt, "i", $UserId);
 mysqli_stmt_execute($stmt);
@@ -32,6 +35,8 @@ mysqli_stmt_close($stmt);
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="manifest" href="/manifest.json">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SMS Form</title>
@@ -48,7 +53,7 @@ mysqli_stmt_close($stmt);
         <ul>
             <li>
                 <br>
-                <a class="" href="about.php">
+                <a class="" href="about.html">
                     <img src="./include/favicon_io/favicon.ico" width="50" height="50" class="d-inline-block align-top" alt="Logo">
                     <h1 class="title" style="margin-top: 5px; font-size: large;"> Salem Server</h1>
                 </a>
@@ -197,6 +202,7 @@ mysqli_stmt_close($stmt);
                                         <div class="row mb-3">
                                                 <div class="col" style="display:flex;justify-content:flex-end;">
                                                     <input type="text" style="margin-right: 5px;" id="phone_number" class="form-control" name="phone_number" placeholder="Type in phone numbers separated by ',' in international format. For example: +23354159968" value="<?php echo  $data != null ?  $data : null; ?>">
+                                                    <input type="text" hidden value="<?php echo  $data2 != null ?  $data2 : null; ?>">
                                                     <select class="form-select" style="width:100px;" name="" id="country_code" placeholder="Countrycode" value="Country codes">
                                                         <option>Code</option>
                                                         <option value="+233">+233</option>

@@ -31,10 +31,10 @@ if (isset($_POST['Send'])) {
 
 }
 
-$sql = 'CALL update_message_counts(?)';
-$stmt = mysqli_prepare($ConnStrx, $sql);
-mysqli_stmt_bind_param($stmt,'s', $messageDate);
-mysqli_stmt_execute($stmt);
+// $sql = 'CALL update_message_counts(?)';
+// $stmt = mysqli_prepare($ConnStrx, $sql);
+// mysqli_stmt_bind_param($stmt,'s', $messageDate);
+// mysqli_stmt_execute($stmt);
 
 
   $endPoint = config('config','mnotify_sms_api_endpoint');

@@ -3,16 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SMS APP</title>
+  <title>Salem SMS</title>
   <!-- Link to Bootstrap CSS -->
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/indexstyle.css">
+  <link rel="manifest" href="manifest.json">
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+              .then((registration) => {
+                console.log('Service Worker registered with scope:', registration.scope);
+              })
+              .catch((error) => {
+                console.error('Service Worker registration failed:', error);
+              });
+    }
+  </script>
 </head>
 <body >
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-white">
     <div class="container">
-      <a class="navbar-brand" href="about.php">
+      <a class="navbar-brand" href="about.html">
         <img src="./include/favicon_io/favicon-32x32.png" width="30" height="30" class="d-inline-block align-top" alt="Logo">
       </a>
       <a class="navbar-brand" href="#">Salem Inc.</a>
@@ -59,7 +71,7 @@
           <p>Effortlessly send SMS messages to individuals or groups.</p>
         </div>
         <div class="feature">
-            <img src="img/reshot-icon-money-document-DFRGMZHVWK.svg"class="img-fluid" width="50px" alt="Feature 1">
+            <img src="img/reshot-icon-money-document-DFRGMZHVWK.svg" class="img-fluid" width="50px" alt="Feature 1">
             <h3>Low Cost</h3>
             <p>Our sms solution, surely meets your budget needs</p>
         </div>

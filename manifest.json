@@ -1,0 +1,22 @@
+{
+  "name": "SMSX Messaging APP",
+  "short_name": "SMSX",
+  "description": "A progressive web app built with PHP",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#007bff",
+  "icons": [
+    {
+      "src": "include/favicon_io/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "include/favicon_io/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    }
+  ],
+  "offline_page": "/index.html"
+}
