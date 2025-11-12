@@ -11,17 +11,14 @@ function config($configFilename, $key)
     }
 }
 
-function validate($input)
+function validate($input): string
 {
-    $input = trim($input);
-    $input = stripslashes($input);
-    $input = htmlspecialchars($input);
-    return $input;
+    return htmlspecialchars(stripslashes(trim($input)));
 }
-function checkLogin($UserName, $Password , $ConnStrx)
+function checkLogin($UserName, $Password , $ConnStrx): array
 {
     // Use prepared statement to protect against SQL injection
-    $query = "SELECT usrID,username,fullname,emailaddress,password,isAdmin,isActive, COUNT(*) as Result FROM users WHERE username = ? AND password = ?";
+    $query = "SELECT usrID,username,fullname,emailaddress,password,isAdmin,isActive, COUNT(*) as Result FROM users WHERE username = ? AND password = ? group by usrID";
     $stmt = mysqli_prepare($ConnStrx, $query);
     mysqli_stmt_bind_param($stmt, "ss", $UserName, $Password);
     mysqli_stmt_execute($stmt);
@@ -29,7 +26,7 @@ function checkLogin($UserName, $Password , $ConnStrx)
     mysqli_stmt_fetch($stmt);
     mysqli_stmt_close($stmt);
     if ($count > 0) {
-        $user_info = array(
+        return array(
             'authenticated' => true,
             'user_id' => $user_id,
             'username' => $username,
@@ -39,13 +36,13 @@ function checkLogin($UserName, $Password , $ConnStrx)
             'isAdmin' => $isAdmin,
             'isActive' => $isActive
         );
-        return $user_info;
     } else {
         return array('authenticated' => false);
     }
 }
 
-function readData ($filePath){
+function readData ($filePath): array
+{
     $file = fopen($filePath, 'r');
     $data = fgetcsv($file, 1000, ",");
     while (($data = fgetcsv($file, 1000, ",")) !== FALSE) {
@@ -61,7 +58,7 @@ function displayData()
 }
 
 
-function retrieveDetails($array,$keys)
+function retrieveDetails($array,$keys): array
 {
     $array2 = array(); 
     foreach($array as $key => $value){

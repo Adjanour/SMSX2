@@ -1,0 +1,113 @@
+id,reciever,sender,body,status,date,usrIdfk
+7,+233541559369,SalemInc.,"How are you doing?",sent,"2023-08-05 13:41:00",NULL
+8,+233541559369,SalemInc.,"How are you doing?",sent,"2023-08-05 14:15:22",NULL
+9,+233256798179,SalemInc.,"Hello, How are you doing?",sent,"2023-08-05 14:32:35",NULL
+10,+233553388324,SalemInc.,"Hello Joe Wise? Washighp",sent,"2023-08-05 16:22:30",NULL
+11,+233553388324,SalemInc.,"Hello Joseph",sent,"2023-08-05 16:31:08",NULL
+12,+233553388324,SalemInc.,"Hello Joseph",sent,"2023-08-05 16:35:59",NULL
+13,+233541559369,Salem,Hello,sent,"2023-08-06 14:47:32",NULL
+14,+233541559369,Salem,Hello,sent,"2023-08-06 14:54:14",NULL
+17,+233541559369,Salem,Hi,sent,"2023-08-06 15:06:52",NULL
+18,+233541559369,Salem,Hi,sent,"2023-08-06 15:16:27",NULL
+19,+233541559369,Salem,hi,sent,"2023-08-06 15:17:36",NULL
+20,+233541559369,Salem,hi,sent,"2023-08-06 15:18:25",NULL
+21,+233541559369,Salem,hi,sent,"2023-08-06 15:24:04",NULL
+22,+233541559369,Salem,hi,sent,"2023-08-14 05:18:53",26
+23,+233541559369,Salem,Hello,sent,"2023-08-06 15:30:39",NULL
+24,+233541559369,Salem,Hello,sent,"2023-08-06 15:33:18",NULL
+25,+233541559369,Salem,Hello,sent,"2023-08-06 15:33:22",NULL
+26,+233541559369,Salem,hi,sent,"2023-08-06 15:33:44",NULL
+27,+233541559369,Salem,hi,sent,"2023-08-06 15:34:51",NULL
+30,+233541559369,SalemInc.,Hello,sent,"2023-08-09 20:19:47",NULL
+31,+233541559369,SalemInc.,Hello,sent,"2023-08-09 20:21:31",NULL
+32,+233541559369,"Salem Inc.",hello,sent,"2023-08-09 20:24:05",NULL
+33,+233541559369,SalemInc.,Hello,sent,"2023-08-10 04:46:39",NULL
+34,+233541559369,SalemInc.,"Hello Kirk",sent,"2023-08-10 04:52:19",NULL
+35,+233541559369,SalemInc.,"Hello Kirk",sent,"2023-08-10 04:52:32",NULL
+36,+233541559369,SalemInc,Hello,sent,"2023-08-10 04:54:09",NULL
+37,+233541559369,SalemInc,Hello,sent,"2023-08-10 04:55:44",NULL
+38,+233541559369,"Salem Inc.",Hello,sent,"2023-08-10 04:58:47",NULL
+39,+233541559369,"Salem Inc.",Hello,sent,"2023-08-10 05:20:08",NULL
+40,+233541559369,"Salem Inc.",hi,sent,"2023-08-10 05:30:53",NULL
+41,+233541559369,"Salem Inc.",hi,sent,"2023-08-10 05:31:09",NULL
+42,+233541559369,"Salem Inc.",hi,sent,"2023-08-10 05:33:41",NULL
+43,+233541559369,"Salem Inc.",hi,sent,"2023-08-10 05:44:15",NULL
+44,+233541559369,"Salem Inc.",hi,sent,"2023-08-10 05:44:26",NULL
+45,+233541559369,"Salem Inc.",hi,sent,"2023-08-10 05:48:34",NULL
+46,+233541559369,"Salem Inc.",hi,sent,"2023-08-10 05:57:42",NULL
+47,+233541559369,"Salem Inc.",hi,sent,"2023-08-10 05:58:18",NULL
+48,+233541559369,"Salem Inc.",Hello,sent,"2023-08-10 06:27:54",NULL
+49,+233541559369,"Salem Inc.",Hello,sent,"2023-08-10 07:13:39",NULL
+50,+233244878725,"Salem Inc.","Hello  Dad, Congrats once again on your 30th work anniversary. May God bless you.",sent,"2023-08-10 08:16:44",NULL
+51,+233541559369,"Salem Inc.","Hello  Dad, Congrats once again on your 30th work anniversary. May God bless you.",sent,"2023-08-10 08:18:51",NULL
+52,+233541559369,SalemInc,"Hello  Dad, Congrats once again on your 30th work anniversary. May God bless you.",sent,"2023-08-10 08:19:31",NULL
+53,+233541559369,SalemInc,"Hello  Dad, Congrats once again on your 30th work anniversary. May God bless you.",sent,"2023-08-10 08:30:55",NULL
+54,+233207816615,"Salem Inc.","Hello Welcome to Salem.",sent,"2023-08-10 11:23:23",NULL
+55,+233558061624,"Salem Inc.","Hello Raffiq",sent,"2023-08-10 13:30:14",NULL
+56,+233541559369,"Salem Inc.","Good Morning",sent,"2023-08-11 05:29:41",NULL
+57,+233541559369,"Salem Inc.","Good Morning",sent,"2023-08-11 05:32:46",NULL
+58,+233541559369,"Salem Inc.","Good Morning",sent,"2023-08-11 05:32:54",NULL
+59,+233541559369,"Salem Inc.",hi,sent,"2023-08-11 05:39:14",NULL
+60,+233541559369,"Salem Inc.",hi,sent,"2023-08-11 05:41:41",NULL
+61,+233541559369,"Salem Inc.",hi,sent,"2023-08-11 05:42:12",NULL
+62,+233541559369,"Salem Inc.",hi,sent,"2023-08-14 05:16:51",26
+63,+233541559369,SalemInc,hi,sent,"2023-08-11 05:54:23",NULL
+64,+233541559369,SalemInc,hi,sent,"2023-08-14 05:16:15",26
+65,+233541559369,SalemInc,hi,sent,"2023-08-11 05:55:30",NULL
+66,+233541559369,SalemInc,hi,sent,"2023-08-11 06:00:27",NULL
+67,+233541559369,SalemInc,hi,sent,"2023-08-11 06:00:30",NULL
+68,+233541559369,SalemInc,hi,sent,"2023-08-11 06:03:04",NULL
+69,+233541559369,SalemInc,hi,sent,"2023-08-11 06:03:19",NULL
+70,+233541559369,SalemInc,hi,sent,"2023-08-11 06:03:53",NULL
+71,+233541559369,SalemInc,hi,sent,"2023-08-11 06:05:30",NULL
+72,+233541559369,SalemInc,hi,sent,"2023-08-11 06:06:50",NULL
+73,+233541559369,,hi,sent,"2023-08-11 06:08:35",NULL
+74,+233541559369,SalemInc,hi,sent,"2023-08-11 06:08:51",NULL
+75,+233541559369,SalemInc,Hello,sent,"2023-08-11 06:10:13",NULL
+76,+233541559369,"Salem Inc.",hi,sent,"2023-08-11 06:10:58",NULL
+78,+233541559369,SalemInc,Hello,sent,"2023-08-11 06:34:59",NULL
+82,+233541559369,SalemInc,"Hello Mum, this is kirk.",sent,"2023-08-11 06:59:41",NULL
+83,+233553388324,"Salem Inc.",Joseph,sent,"2023-08-11 14:29:26",NULL
+84,+233541559369,"Salem Inc.",Hi,sent,"2023-08-13 13:33:46",NULL
+85,+233541559369,SalemInc,Hi,sent,"2023-08-14 09:26:01",NULL
+86,+233541559369,"Salem Inc.",Hi,sent,"2023-08-14 09:26:47",NULL
+87,+233257778524,"Salem Inc.","Hi
+",sent,"2023-08-14 14:08:38",21
+88,+233541559369,"Salem Inc.",Hello,sent,"2023-08-14 16:10:06",27
+89,+233551669706,"Salem Inc.","Hello from Group 5a",sent,"2023-08-14 16:46:59",27
+90,+233599320584,"Salem Inc.","Hello from Group 5a",sent,"2023-08-14 16:48:29",27
+91,+233557559959,"Salem Inc.","Hello, man",sent,"2023-08-15 14:58:27",31
+92,+233557559959,"Salem Inc.","Hello, welcome krebo",sent,"2023-08-15 15:08:01",31
+93,+233541559369,"Salem Inc.",Hello,sent,"2023-08-15 17:17:41",31
+94,"+233541559369,+233557559959,+233551669706","Salem Inc.",Hello,sent,"2023-08-15 17:30:12",31
+95,+233244248896,"Salem Inc.","Hello User",sent,"2023-08-15 18:40:54",30
+96,+233206191190,"Salem Inc.",Hello,sent,"2023-08-15 18:45:19",30
+97,"+233541559369,+233202714414,+233508531546","Salem Inc.",Hello,sent,"2023-08-15 18:46:56",30
+98,"+233541559369,+233207816615,+233244878725,+233243331988,+233247300488","Salem Inc.","Hello, this is Kirk. Just testing the system",sent,"2023-08-17 18:15:08",30
+99,+233541559369,"Salem Inc.","Dear [NAME], welcome to our platform!",sent,"2023-08-17 18:34:05",30
+100,+233541559369,"Salem Inc.","Hello {NAME} welcome to my app",sent,"2023-08-17 21:38:30",30
+101,0541559369,"Salem Inc.","Hello Kirk",sent,"2023-08-18 07:20:03",30
+102,+233597948613,"Salem Inc.","Hello Benjamin",sent,"2023-08-24 16:42:19",33
+103,+233533283042,"Salem Inc.","Hi Raymond, this is Kirk. I am so sorry I can not be of better help; this is bad timing. But in due time I will try and send something more.",sent,"2023-08-26 13:27:42",33
+104,,"Salem Inc.","Hello Salem Foundation Executive,
+I trust this message finds you well. As we embark on this well-deserved vacation from college, 
+ let us remember our core objectives:
+Spreading the gospel and living our beliefs
+Empowering self-sustainability and mode","not sent","2023-08-31 17:34:25",33
+105,,"Salem FDN","Hello Salem Foundation Executive,
+I trust this message finds you well. As we embark on this well-deserved vacation from college, 
+ let us remember our core objectives:
+Spreading the gospel and living our beliefs
+Empowering self-sustainability and mode","not sent","2023-08-31 17:36:02",33
+106,+233500823948,"Salem Inc.","Hello Project Manager,
+I trust this message finds you well. As we embark on this well-deserved vacation from college, 
+ let us remember our core objectives:
+Spreading the gospel and living our beliefs
+Empowering self-sustainability and modernization i",sent,"2023-08-31 17:52:18",33
+107,+233248879665,"Salem Inc.","Dear [NAME], welcome to our platform!",sent,"2023-08-31 22:46:07",34
+108,+233541559369,"Salem Inc.","Good Morning Kirk Katamanso. Have a wonderful Day.",sent,"2023-09-01 07:18:12",26
+109,+233278230664,"Salem House","Hello how are you",sent,"2023-09-01 17:38:00",26
+110,+233541559369,"Salem House","Welcome Kirk Katamanso !",sent,"2023-09-03 10:25:48",24
+111,+233541559369,"Salem House","Hello Kirk Katamanso, wlecome!",sent,"2023-09-06 09:06:20",33
+112,+233541559369,"Salem House","Hello Kirk Katamanso, wlecome!",sent,"2023-09-06 15:17:37",33
+113,+233541559369,"Salem House","Hello Kirk Katamanso, wlecome!",sent,"2023-09-06 15:22:45",33

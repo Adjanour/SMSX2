@@ -10,7 +10,7 @@ session_start();
 // }
 $query = "SELECT * FROM messages ORDER BY id DESC"; // Adjust the query as needed
 $result = mysqli_query($ConnStrx, $query);
-$querry2 = "SELECT month, count, MonthName FROM message_counts join Months on message_counts.month = Months.MonthNumber ORDER BY month ASC";
+$querry2 = "SELECT month, count, MonthName FROM message_counts join months on message_counts.month = months.MonthNumber ORDER BY month ASC";
 $result2=mysqli_query($ConnStrx,$querry2);
 $sentMessages = []; // Initialize an array to hold the sent messages
 
@@ -52,6 +52,8 @@ $endPoint = "https://apps.mnotify.net/smsapi/balance";
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="manifest" href="/manifest.json">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>

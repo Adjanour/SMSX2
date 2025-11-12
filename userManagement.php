@@ -19,7 +19,7 @@ if (!$result) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- Add Bootstrap CSS link -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="../../../Users/Kirk/PhpstormProjects/API_INTERACTION/css/bootstrap.css" rel="stylesheet">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">

@@ -11,6 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a81368914c.js"></script>
     <script src="js/bootstrap.js"></script>
+    <link rel="manifest" href="/manifest.json">
 
 </head>
 <body>
