@@ -1,0 +1,24 @@
+# Configuration files with sensitive data
+config.php
+
+# IDE files
+.idea/
+.vscode/
+
+# Composer
+/vendor/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Backup files
+*~
+*.bak
+
+# Log files
+*.log
+crash*.txt
+
+# Upload directory (may contain user data)
+upload/

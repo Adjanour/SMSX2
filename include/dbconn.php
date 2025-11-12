@@ -11,7 +11,7 @@ $dbPort = config('config', 'db_port');
 $dbPort = (int)$dbPort;
 $socket="";
 // Use the retrieved values as needed
-$ConnStrx = mysqli_connect("localhost", "root", "TonePave66$","crud",$dbPort,$socket);
+$ConnStrx = mysqli_connect($dbHost, $dbUsername, $dbPassword, $dbName, $dbPort, $socket);
 
 if(!$ConnStrx)
 {
