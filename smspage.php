@@ -194,7 +194,7 @@ mysqli_stmt_close($stmt);
                                             while($row = mysqli_fetch_assoc($result))
                                             {
                                                 $phoneNumber = $row['ctcphonenumber'];
-                                                $Name = $row['ctcName'];
+                                                $Name = $row['ctcname'];
                                                 $ctcId = $row['ctcId'];
                                             
                                             ?>
