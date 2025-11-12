@@ -49,11 +49,14 @@
 // Include the mnotify library
 require_once 'mnotify.php';
 
+// Load configuration
+$config = require_once 'config.php';
+
 // Create a new instance of the mnotify class
 $mnotify = new Mnotify();
 
-// Set your mnotify API key
-$mnotify->setApiKey('l4OSeqp1RxuNBY3dmNr6J1NlP');
+// Set your mnotify API key from config
+$mnotify->setApiKey($config['mnotify_sms_api_key']);
 
 // Set the sender ID
 $mnotify->setSenderId('mNotify');
