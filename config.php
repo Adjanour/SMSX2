@@ -27,5 +27,3 @@ define('Hubtel_SMS_API_SECRET','rmiumzxp');
 define('HUBBTEL_SMS_API_ENDPOINT','https://smsc.hubtel.com/v1/messages/send');
 define('Mnotify_SMS_API_ENDPOINT','https://apps.mnotify.net/smsapi');
 define('Mnotify_SMS_API_KEY', 'fo0K4z1VizxW9Ie4oE3zxVmKY');
-
-?>
